@@ -91,7 +91,14 @@ def post_data_with_key(key: str):
 
     producer.produce(topic.name, json.dumps(data), key.encode())
 
-    return Response(status=200)
+    result = {
+        "status": 200,
+        "value1": 1000,
+        "kiln_temp": 2500,
+        "run_time": 900,
+        "description": "All ok"
+    }
+    return result
 
 if __name__ == '__main__':
     print("=" * 60)
